@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_player: {fileID: 0}
-  m_fForce: 3
+  m_fForce: 4.5
+  m_level: {fileID: 0}
 --- !u!50 &5256011236020013398
 Rigidbody2D:
   serializedVersion: 4

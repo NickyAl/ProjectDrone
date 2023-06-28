@@ -28,7 +28,7 @@ public class EnemyShootProjectiles : MonoBehaviour
         {
             m_fTimer += Time.deltaTime;
 
-            if (m_fTimer > 2)
+            if (m_fTimer > 1)
             {
                 m_fTimer = 0;
                 shoot();

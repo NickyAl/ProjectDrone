@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-    public GameObject m_player;
-    public float m_fForce = 0.0f;
+    [SerializeField]
+    GameObject m_player;
+    [SerializeField]
+    float m_fForce = 0.0f;
+    [SerializeField]
+    GameObject m_level;
 
     private Rigidbody2D m_rigidbody;
     private float m_fTimer = 0.0f;
@@ -35,9 +39,16 @@ public class EnemyProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.gameObject.CompareTag("Level"))
+        {
+            return;
+        }
+
         if(other.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            //deal dmg
         }
+
+        Destroy(gameObject);
     }
 }
