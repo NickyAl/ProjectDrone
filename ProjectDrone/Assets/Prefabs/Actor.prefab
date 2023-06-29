@@ -9,10 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5982272924873692271}
-  - component: {fileID: 5982272924873692269}
   - component: {fileID: 5982272924873692268}
   - component: {fileID: 5982272924873692265}
   - component: {fileID: 3448212033855064066}
+  - component: {fileID: 5982272924873692269}
+  - component: {fileID: -1308687190126459110}
+  - component: {fileID: 4248292000961578245}
   m_Layer: 3
   m_Name: Actor
   m_TagString: Player
@@ -35,23 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5982272924873692269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5982272924873692275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be4f1ccb196cd4a45afb52d7374c426d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fInputThrust: 3
-  m_fIdleThrust: 3
-  m_fGliding: 10
-  m_fGravityPull: 0.08
-  m_fBoostMultiplier: 1.6
 --- !u!50 &5982272924873692268
 Rigidbody2D:
   serializedVersion: 4
@@ -141,3 +126,52 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.7
+--- !u!114 &5982272924873692269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982272924873692275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4f1ccb196cd4a45afb52d7374c426d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fInputThrust: 3
+  m_fIdleThrust: 3
+  m_fGliding: 10
+  m_fGravityPull: 0.08
+  m_fBoostMultiplier: 1.6
+  m_health: {fileID: -1308687190126459110}
+--- !u!114 &-1308687190126459110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982272924873692275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea9c338f3a5fce4bb4c75d505eac494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_iMaxHealth: 5
+  m_brokenDrone: {fileID: 6108798164639787585, guid: f3c55b1fda11e46478200db6bbcc2d99, type: 3}
+  m_healthBar: {fileID: 0}
+  m_bDestroyed: 0
+--- !u!114 &4248292000961578245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982272924873692275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55fc8d1ca22a0a4fab5ac1ac6eb7819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_buffPackage: {fileID: 4762366777238826778, guid: ca287c6e25e3af440bb274f56f11e8f7, type: 3}
+  m_healthSystem: {fileID: -1308687190126459110}
+  m_destroyPackage: {fileID: -3671499146303070549, guid: ca287c6e25e3af440bb274f56f11e8f7, type: 3}

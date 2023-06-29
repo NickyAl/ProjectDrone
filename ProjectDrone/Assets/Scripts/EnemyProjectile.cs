@@ -44,11 +44,6 @@ public class EnemyProjectile : MonoBehaviour
             return;
         }
 
-        if(other.gameObject.CompareTag("Player"))
-        {
-            //deal dmg
-        }
-
         Destroy(gameObject);
     }
 }

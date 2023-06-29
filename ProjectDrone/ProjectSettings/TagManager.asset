@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Level
   - ObjectSpawner
+  - Attack Projectile
+  - Buff
+  - HealPlatfrom
+  - HealingPlatform
   layers:
   - Default
   - TransparentFX

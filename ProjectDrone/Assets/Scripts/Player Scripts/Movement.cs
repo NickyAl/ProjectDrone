@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     private float m_fVerticalInput = 0f;
     private Rigidbody2D m_rigidbody;
     private bool m_bHasBoost = false;
+    private bool m_bHide = true;
 
     [SerializeField]
     float m_fInputThrust = 0f;
@@ -20,6 +21,9 @@ public class Movement : MonoBehaviour
     [SerializeField]
     float m_fBoostMultiplier = 0f;
 
+    [SerializeField]
+    PlayerHealthSystem m_health;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,11 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(m_health.m_bDestroyed)
+        {
+            return;
+        }
+
         m_fHorizontalInput = Input.GetAxis("Horizontal");
         m_fVerticalInput = Input.GetAxis("Vertical");
 
@@ -45,6 +54,16 @@ public class Movement : MonoBehaviour
     // is called once per physics update
     void FixedUpdate()
     {
+        if (m_health.m_bDestroyed)
+        {
+            if(m_bHide)
+            {
+                transform.position += new Vector3(0f, 10f, 0f);
+                m_bHide = false;
+            }
+            return;
+        }
+
         float fMovementX = (GetThrust() + m_fGliding) * Time.fixedDeltaTime * Mathf.Sin(-1f * m_rigidbody.rotation * (Mathf.PI / 180f));
         float fMovementY = GetThrust() * Time.fixedDeltaTime * Mathf.Cos(m_rigidbody.rotation * (Mathf.PI / 180f)) - m_fGravityPull;
         transform.position += new Vector3(fMovementX, fMovementY, 0f);
