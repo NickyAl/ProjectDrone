@@ -38,7 +38,6 @@ public class WorldGeneration : MonoBehaviour
         {
             InstantiateTwo(vecPosition);
         }
-
     }
 
     void InstantiateTwo(Vector3 vecLevelPosition)
@@ -51,11 +50,11 @@ public class WorldGeneration : MonoBehaviour
 
     void InstantiateThree(Vector3 vecLevelPosition)
     {
-        Vector3 vecPosition = new Vector3(vecLevelPosition.x + Random.Range(-6.5f, -4f), vecLevelPosition.y + Random.Range(-5f, 3f), vecLevelPosition.z);
+        Vector3 vecPosition = new Vector3(vecLevelPosition.x + Random.Range(-6.5f, -4f), vecLevelPosition.y + Random.Range(-4.3f, 3f), vecLevelPosition.z);
         InstantiatePlatform(vecPosition);
-        vecPosition = new Vector3(vecLevelPosition.x + Random.Range(-1f, 2f), vecLevelPosition.y + Random.Range(-5f, 3f), vecLevelPosition.z);
+        vecPosition = new Vector3(vecLevelPosition.x + Random.Range(-0.3f, 2f), vecLevelPosition.y + Random.Range(-4.3f, 3f), vecLevelPosition.z);
         InstantiatePlatform(vecPosition);
-        vecPosition = new Vector3(vecLevelPosition.x + Random.Range(4f, 6.5f), vecLevelPosition.y + Random.Range(-5f, 3f), vecLevelPosition.z);
+        vecPosition = new Vector3(vecLevelPosition.x + Random.Range(5.7f, 6.5f), vecLevelPosition.y + Random.Range(-4.3f, 3f), vecLevelPosition.z);
         InstantiatePlatform(vecPosition);
     }
 
@@ -66,7 +65,7 @@ public class WorldGeneration : MonoBehaviour
             Vector3 vecBottomPillarPosition = new Vector3(vecPosition.x, vecPosition.y - 6.3f, vecPosition.z);
             Instantiate(m_pillar, vecBottomPillarPosition, Quaternion.identity);
 
-            Vector3 vecTopPillarPosition = new Vector3(vecPosition.x, vecPosition.y + Random.Range(3f, 5f) + 6.3f, vecPosition.z);
+            Vector3 vecTopPillarPosition = new Vector3(vecPosition.x, vecPosition.y + Random.Range(2.3f, 5f) + 6.3f, vecPosition.z);
             Instantiate(m_pillar, vecTopPillarPosition, Quaternion.identity);
 
             return;

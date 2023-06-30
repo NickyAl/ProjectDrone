@@ -39,7 +39,7 @@ public class EnemyProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Level"))
+        if(other.gameObject.CompareTag("Level") || other.gameObject.CompareTag("PlayableZone"))
         {
             return;
         }

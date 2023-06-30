@@ -5,7 +5,7 @@ using UnityEngine;
 public class Despawn : MonoBehaviour
 {
     [SerializeField]
-    float m_fDestroyDistance = 30f;
+    float m_fDestroyDistance = 50f;
 
     private GameObject m_player;
 

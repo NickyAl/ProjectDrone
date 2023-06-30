@@ -58,7 +58,8 @@ public class Movement : MonoBehaviour
         {
             if(m_bHide)
             {
-                transform.position += new Vector3(0f, 10f, 0f);
+                m_rigidbody.rotation = 0f;
+                transform.position += new Vector3(0f, 30f, 0f);
                 m_bHide = false;
             }
             return;

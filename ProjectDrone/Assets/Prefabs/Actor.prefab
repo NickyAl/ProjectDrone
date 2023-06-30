@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea9c338f3a5fce4bb4c75d505eac494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iMaxHealth: 5
+  m_iMaxHealth: 50
   m_brokenDrone: {fileID: 6108798164639787585, guid: f3c55b1fda11e46478200db6bbcc2d99, type: 3}
   m_healthBar: {fileID: 8186600377766597159, guid: 2d6856e04efe3e24b8267f2bbbbe55fb, type: 3}
   m_bDestroyed: 0

@@ -10,6 +10,9 @@ TagManager:
   - Buff
   - HealPlatfrom
   - HealingPlatform
+  - CarriedPackage
+  - DeadZone
+  - PlayableZone
   layers:
   - Default
   - TransparentFX
@@ -52,4 +55,7 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 1030625523
+    locked: 0
+  - name: MapEffects
+    uniqueID: 1644361309
     locked: 0

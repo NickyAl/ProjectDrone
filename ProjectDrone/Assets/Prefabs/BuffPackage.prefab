@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 596311875758844802}
   - component: {fileID: 4390090986642150264}
   - component: {fileID: -2870615259067892547}
-  - component: {fileID: -3671499146303070549}
   - component: {fileID: 5864238289838389570}
   m_Layer: 0
   m_Name: BuffPackage
-  m_TagString: Untagged
+  m_TagString: CarriedPackage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,19 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_smoothIndex: 0.07
   m_vecOffset: {x: 0, y: -0.5, z: 0}
---- !u!114 &-3671499146303070549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4762366777238826778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 404b7b02527236949b2074b147727ad4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_playerHealthSystem: {fileID: -1308687190126459110, guid: f3f1eab4ff9f0914bb7505e30e2187f7, type: 3}
 --- !u!61 &5864238289838389570
 BoxCollider2D:
   m_ObjectHideFlags: 0

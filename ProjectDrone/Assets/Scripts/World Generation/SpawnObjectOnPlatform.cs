@@ -7,25 +7,32 @@ public class SpawnObjectOnPlatform : MonoBehaviour
     [SerializeField]
     GameObject m_enemy;
     [SerializeField]
-    GameObject m_health;
-    [SerializeField]
-    float m_fVerticalOffset = 0.5f;
+    GameObject m_pickUpablePackage;
     [SerializeField]
     Transform m_objectSpawner;
+    [SerializeField]
+    GameObject m_healingPlatform;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (Random.Range(0f, 1f) > 0.8)
+        float fVerticalOffset = 0f;
+        Vector3 vecPosition = new Vector3();
+
+        if (Random.Range(0f, 1f) > 0.857)
         {
+            fVerticalOffset = -0.3f;
+            vecPosition = new Vector3(m_objectSpawner.position.x, m_objectSpawner.position.y + fVerticalOffset, m_objectSpawner.position.z);
+            Instantiate(m_healingPlatform, vecPosition, Quaternion.identity);
             return;
         }
 
-        Vector3 vecPosition = new Vector3(m_objectSpawner.position.x, m_objectSpawner.position.y + m_fVerticalOffset, m_objectSpawner.position.z);
+        fVerticalOffset = 0.4f;
+        vecPosition = new Vector3(m_objectSpawner.position.x, m_objectSpawner.position.y + fVerticalOffset, m_objectSpawner.position.z);
 
-        if (Random.Range(0f, 1f) > 0.8)
+        if (Random.Range(0f, 1f) > 0.833)
         {
-            Instantiate(m_health, vecPosition, Quaternion.identity);
+            Instantiate(m_pickUpablePackage, vecPosition, Quaternion.identity);
         }
         else
         {

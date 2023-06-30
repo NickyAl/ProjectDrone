@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6305324079261831027}
   - component: {fileID: 9141410706270680871}
   m_Layer: 0
-  m_Name: Health
+  m_Name: PickUpablePackage
   m_TagString: Buff
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

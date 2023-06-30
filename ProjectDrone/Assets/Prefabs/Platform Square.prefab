@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_enemy: {fileID: 6399383331758870258, guid: 30252fcd577d6c04194fcc4c7c07031e, type: 3}
-  m_health: {fileID: 1801177645310336144, guid: 8d765c1e371af794399fb0529fe2d993, type: 3}
-  m_fVerticalOffset: 0.5
+  m_pickUpablePackage: {fileID: 1801177645310336144, guid: 8d765c1e371af794399fb0529fe2d993, type: 3}
   m_objectSpawner: {fileID: 9218405752951787548}
+  m_healingPlatform: {fileID: 43178798146244682, guid: 9c93f2d898bfbef4cbb0764477f76a8e, type: 3}
