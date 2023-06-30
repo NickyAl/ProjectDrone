@@ -17,7 +17,14 @@ public class WorldGeneration : MonoBehaviour
     [SerializeField]
     GameObject m_pillar;
 
+    private Transform m_player;
+
     private bool m_bInstantiatedNext = false;
+
+    void Start()
+    {
+        m_player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,7 +37,18 @@ public class WorldGeneration : MonoBehaviour
         Instantiate(m_level, vecPosition, Quaternion.identity);
         m_bInstantiatedNext = true;
 
-        if (Random.Range(0f, 1f) > 0.5f)
+        float fChance = 0.6f;
+
+        if (m_player.position.x > 1000f)
+        {
+            fChance = 0.2f;
+        }
+        else if (m_player.position.x > 500f)
+        {
+            fChance = 0.4f;
+        }
+
+        if (Random.Range(0f, 1f) > fChance)
         {
             InstantiateThree(vecPosition);
         }
@@ -44,7 +62,7 @@ public class WorldGeneration : MonoBehaviour
     {
         Vector3 vecPosition = new Vector3(vecLevelPosition.x + Random.Range(-6.5f, -2f), vecLevelPosition.y + Random.Range(-5f, 3f), vecLevelPosition.z);
         InstantiatePlatform(vecPosition);
-        vecPosition = new Vector3(vecLevelPosition.x + Random.Range(1f, 6.5f), vecLevelPosition.y + Random.Range(-5f, 3f), vecLevelPosition.z);
+        vecPosition = new Vector3(vecLevelPosition.x + Random.Range(2f, 6.5f), vecLevelPosition.y + Random.Range(-5f, 3f), vecLevelPosition.z);
         InstantiatePlatform(vecPosition);
     }
 
