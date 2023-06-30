@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_smoothIndex: 0.07
-  m_vecOffset: {x: 0, y: -2, z: 0}
+  m_vecOffset: {x: 0, y: -0.5, z: 0}
 --- !u!114 &-3671499146303070549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404b7b02527236949b2074b147727ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playerHealthSystem: {fileID: -1308687190126459110, guid: f3f1eab4ff9f0914bb7505e30e2187f7, type: 3}
 --- !u!61 &5864238289838389570
 BoxCollider2D:
   m_ObjectHideFlags: 0

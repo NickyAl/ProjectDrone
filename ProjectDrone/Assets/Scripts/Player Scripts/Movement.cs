@@ -71,11 +71,11 @@ public class Movement : MonoBehaviour
 
         if (m_fHorizontalInput > 0)
         {
-            m_rigidbody.rotation -= m_bHasBoost ? 0.45f : 0.9f;
+            m_rigidbody.rotation -= m_bHasBoost ? 0.9f : 2f;
         }
         if (m_fHorizontalInput < 0)
         {
-            m_rigidbody.rotation += m_bHasBoost ? 0.45f : 0.9f;
+            m_rigidbody.rotation += m_bHasBoost ? 0.9f : 2f;
         }
     }
 

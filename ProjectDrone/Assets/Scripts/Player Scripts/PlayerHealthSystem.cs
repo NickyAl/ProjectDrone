@@ -18,7 +18,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     public void Heal()
     {
-        m_iCurrentHealth++;
+        m_iCurrentHealth = m_iMaxHealth;
         CurrentHealthChanged();
     }
 

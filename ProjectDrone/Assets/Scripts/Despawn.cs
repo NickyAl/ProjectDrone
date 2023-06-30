@@ -20,6 +20,11 @@ public class Despawn : MonoBehaviour
     {
         float fDistance = Vector2.Distance(transform.position, m_player.transform.position);
 
+        if(transform.position.x > m_player.transform.position.x)
+        {
+            return;
+        }
+
         if (fDistance > m_fDestroyDistance)
         {
             Destroy(gameObject);

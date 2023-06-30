@@ -11,16 +11,9 @@ public class BuffPackage : MonoBehaviour
 
     private bool m_bHasPackage = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public bool GetPlayerHasPackage()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return m_bHasPackage;
     }
 
     void OnTriggerEnter2D(Collider2D other)
