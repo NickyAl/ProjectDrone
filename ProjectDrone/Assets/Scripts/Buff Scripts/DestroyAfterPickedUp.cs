@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DestroyAfterPickedUp : MonoBehaviour
 {
+    [SerializeField]
+    AudioSource m_hookPackageAudio;
+
     private BuffPackage m_playerBuffPackage;
     private GameObject m_player;
 
@@ -17,7 +20,8 @@ public class DestroyAfterPickedUp : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && m_playerBuffPackage.GetPlayerHasPackage() == false)
         {
-            Destroy(gameObject);
+            transform.position = new Vector3(transform.position.x, transform.position.y + 30f, transform.position.z);
+            m_hookPackageAudio.Play();
         }
     }
 }

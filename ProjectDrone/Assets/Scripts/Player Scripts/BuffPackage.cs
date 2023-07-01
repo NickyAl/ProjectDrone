@@ -8,6 +8,8 @@ public class BuffPackage : MonoBehaviour
     GameObject m_buffPackage;
     [SerializeField]
     PlayerHealthSystem m_healthSystem;
+    [SerializeField]
+    AudioSource m_rechargeAudio;
 
     private GameObject m_carriedPackage;
 
@@ -38,6 +40,7 @@ public class BuffPackage : MonoBehaviour
             m_healthSystem.Heal();
             m_bHasPackage = false;
             Destroy(m_carriedPackage);
+            m_rechargeAudio.Play();
         }
     }
 }

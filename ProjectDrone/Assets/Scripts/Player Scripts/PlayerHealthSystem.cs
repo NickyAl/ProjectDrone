@@ -11,6 +11,9 @@ public class PlayerHealthSystem : MonoBehaviour
     GameObject m_brokenDrone;
     [SerializeField]
     HealthBarScript m_healthBar;
+    [SerializeField]
+    AudioSource m_hittingPlayerAudio;
+
 
     private int m_iCurrentHealth = 50;
     private bool m_bIsInDeadZone = false;
@@ -68,6 +71,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
         if (other.gameObject.CompareTag("Attack Projectile"))
         {
+            m_hittingPlayerAudio.Play();
             m_iCurrentHealth -= m_iMaxHealth / 6;
             CurrentHealthChanged();
         }

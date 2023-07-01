@@ -10,6 +10,8 @@ public class EnemyShootProjectiles : MonoBehaviour
     Transform m_projTransform;
     [SerializeField]
     float m_fRange = 7.5f;
+    [SerializeField]
+    AudioSource m_laserCanonAudio;
 
     private float m_fTimer = 0.0f;
     private GameObject m_player;
@@ -33,6 +35,7 @@ public class EnemyShootProjectiles : MonoBehaviour
             if (m_fTimer > shootingPauseTime)
             {
                 m_fTimer = 0;
+                m_laserCanonAudio.Play();
                 shoot();
             }
         }

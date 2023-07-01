@@ -20,17 +20,18 @@ public class Movement : MonoBehaviour
     float m_fGravityPull = 0f;
     [SerializeField]
     float m_fBoostMultiplier = 0f;
+    [SerializeField]
+    AudioSource m_droneNoiseAudio;
 
     [SerializeField]
     PlayerHealthSystem m_health;
 
-    // Start is called before the first frame update
     void Start()
     {
+        m_droneNoiseAudio.Play();
         m_rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(m_health.m_bDestroyed)
@@ -49,15 +50,34 @@ public class Movement : MonoBehaviour
         {
             m_bHasBoost = false;
         }
+
+        AudioPitchUpdate();
     }
 
-    // is called once per physics update
+    void AudioPitchUpdate()
+    {
+        if (m_fVerticalInput < 0)
+        {
+            m_droneNoiseAudio.pitch = 1.8f;
+            return;
+        }
+
+        if (m_fVerticalInput > 0 && m_bHasBoost == true)
+        {
+            m_droneNoiseAudio.pitch = 3f;
+            return;
+        }
+
+        m_droneNoiseAudio.pitch = 2.5f;
+    }
+
     void FixedUpdate()
     {
         if (m_health.m_bDestroyed)
         {
             if(m_bHide)
             {
+                m_droneNoiseAudio.Stop();
                 m_rigidbody.rotation = 0f;
                 transform.position += new Vector3(0f, 30f, 0f);
                 m_bHide = false;
