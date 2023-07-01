@@ -18,7 +18,6 @@ public class WorldGeneration : MonoBehaviour
     GameObject m_pillar;
 
     private Transform m_player;
-
     private bool m_bInstantiatedNext = false;
 
     void Start()

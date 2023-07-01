@@ -19,6 +19,15 @@ public class EnemyProjectile : MonoBehaviour
         m_rigidbody = GetComponent<Rigidbody2D>();
         m_player = GameObject.FindGameObjectWithTag("Player");
 
+        if (m_player.transform.position.x > 1000f)
+        {
+            m_fForce *= 1.5f;
+        }
+        if (m_player.transform.position.x > 2000f)
+        {
+            m_fForce *= 2f;
+        }
+
         Vector3 direction = m_player.transform.position - transform.position;
         m_rigidbody.velocity = new Vector2(direction.x, direction.y).normalized * m_fForce;
 
@@ -26,7 +35,6 @@ public class EnemyProjectile : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rotation + 90);
     }
 
-    // Update is called once per frame
     void Update()
     {
         m_fTimer += Time.deltaTime;

@@ -13,7 +13,6 @@ public class SpawnObjectOnPlatform : MonoBehaviour
     [SerializeField]
     GameObject m_healingPlatform;
 
-    // Start is called before the first frame update
     void Start()
     {
         float fVerticalOffset = 0f;
@@ -38,11 +37,5 @@ public class SpawnObjectOnPlatform : MonoBehaviour
         {
             Instantiate(m_enemy, vecPosition, Quaternion.identity);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

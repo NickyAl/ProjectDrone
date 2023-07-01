@@ -28,7 +28,9 @@ public class EnemyShootProjectiles : MonoBehaviour
         {
             m_fTimer += Time.deltaTime;
 
-            if (m_fTimer > 1)
+            float shootingPauseTime = m_player.transform.position.x > 1500f ? 0.7f : 1f;
+
+            if (m_fTimer > shootingPauseTime)
             {
                 m_fTimer = 0;
                 shoot();

@@ -53,6 +53,18 @@ TagManager:
   - name: Environment
     uniqueID: 994769975
     locked: 0
+  - name: Map buildings background effects
+    uniqueID: 59649701
+    locked: 0
+  - name: Map buildings
+    uniqueID: 2799934429
+    locked: 0
+  - name: Map building on top effects
+    uniqueID: 4245898359
+    locked: 0
+  - name: Top Building
+    uniqueID: 2577883039
+    locked: 0
   - name: Characters
     uniqueID: 1030625523
     locked: 0

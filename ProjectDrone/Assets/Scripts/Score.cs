@@ -26,7 +26,7 @@ public class Score : MonoBehaviour
         if(m_player.transform.position.x > m_fMaxScore)
         {
             m_fMaxScore = m_player.transform.position.x;
-            m_iScore = (int)(m_fMaxScore / 5);
+            m_iScore = (int)(m_fMaxScore);
             m_txtScoreText.text = "Score: " + m_iScore.ToString();
         }
     }

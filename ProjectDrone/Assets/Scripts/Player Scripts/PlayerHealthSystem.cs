@@ -14,9 +14,16 @@ public class PlayerHealthSystem : MonoBehaviour
 
     private int m_iCurrentHealth = 50;
     private bool m_bIsInDeadZone = false;
-    
-    public bool m_bDestroyed = false;
     private float m_fTimer = 0.0f;
+    private bool m_bReducedHealth = false;
+
+    public bool m_bDestroyed = false;
+
+    void Start()
+    {
+        m_iCurrentHealth = m_iMaxHealth;
+        m_healthBar.SetMaxHealth(m_iMaxHealth);
+    }
 
     void Update()
     {
@@ -28,6 +35,11 @@ public class PlayerHealthSystem : MonoBehaviour
             m_iCurrentHealth -= m_bIsInDeadZone ? m_iMaxHealth / 10 : 1;
             CurrentHealthChanged();
         }
+
+        if(m_bReducedHealth == false && transform.position.x > 750f)
+        {
+            ReduceMaxHealt();
+        }
     }
 
     public void Heal()
@@ -36,10 +48,15 @@ public class PlayerHealthSystem : MonoBehaviour
         CurrentHealthChanged();
     }
 
-    void Start()
+    void ReduceMaxHealt()
     {
-        m_iCurrentHealth = m_iMaxHealth;
+        m_iMaxHealth = 30;
+        float fTempHealth = (float)m_iCurrentHealth;
+        fTempHealth = (fTempHealth / 5f) * 3f;
+        m_iCurrentHealth = (int)fTempHealth;
         m_healthBar.SetMaxHealth(m_iMaxHealth);
+        CurrentHealthChanged();
+        m_bReducedHealth = true;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -73,7 +90,8 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             m_bDestroyed = true;
             Vector3 vecPosition = gameObject.transform.position;
-            Instantiate(m_brokenDrone, vecPosition, Quaternion.identity);
+
+            Instantiate(m_brokenDrone, vecPosition, transform.rotation);
         }
     }
 }
