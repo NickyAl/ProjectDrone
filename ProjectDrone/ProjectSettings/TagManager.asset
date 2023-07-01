@@ -53,6 +53,9 @@ TagManager:
   - name: Environment
     uniqueID: 994769975
     locked: 0
+  - name: healing platforms
+    uniqueID: 2218283249
+    locked: 0
   - name: Map buildings background effects
     uniqueID: 59649701
     locked: 0
