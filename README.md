@@ -13,4 +13,4 @@ Space - activates boost that helps you fly faster but pivot harder<br/>
 <br/>
 If you get stuck at How To Play press ESCAPE<br/>
 <br/>
-[Drive with installer](https://drive.google.com/drive/folders/1XdY6T9I4aD9wvF6tIxJiHvCfJXOiTE54)
+
